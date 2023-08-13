@@ -1,0 +1,30 @@
+.card {
+    background-color: blue;
+    height: 70px;
+    width: 70px;
+    margin: 5px;
+}
+
+.greenCard {
+    background-color: green;
+}
+
+.redCard {
+    background-color: red;
+}
+
+.yellowCard {
+    background-color: yellow;
+}
+
+.purpleCard {
+    background-color: purple;
+}
+
+.blackCard {
+    background-color: black;
+}
+
+.whiteCard {
+    background-color: rgb(156, 144, 144);
+}
