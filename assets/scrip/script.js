@@ -1,12 +1,9 @@
 let cardSelector = $(".card");
 let IndexSelecteds = [];
-
-cardSelector.on("click", pickBoard);
 let matches = 0;
 let turns = 0;
 let cardGuesses = [];
 
-// $(x[2]).addClass('green');
 function randomizeBoard() {
 
     while (IndexSelecteds.length < 12) {
@@ -30,6 +27,7 @@ function randomizeBoard() {
 
     setTimeout(() => {
         $(cardSelector).css("background-color", "blue");
+        cardSelector.on("click", pickBoard);
     },
         3500);
 };
@@ -37,20 +35,23 @@ function randomizeBoard() {
 function pickBoard() {
     cardGuesses.push(this.className.split(' ')[2]);
     if (cardGuesses[0] == cardGuesses[1]) {
-        // $(`.${cardGuesses[0]}`).css("background-color", "blue");
         $(`.${cardGuesses[0]}`).removeAttr("style");
-        $(`.${cardGuesses[0]}`).unbind();
+        $(`.${cardGuesses[0]}`).off();
+        var sucessAudio = new Audio("assets/songs/sucessAudio.wav");
+        sucessAudio.play();
         matches++;
-        console.log("Your Matches: "+matches);
+        $("#matches").text(`Your Matches: ${matches}`);
         cardGuesses.length = 0;
     } else if (cardGuesses.length == 2) {
+        var failAudio = new Audio("assets/songs/failAudio.wav");
+        failAudio.play();
         turns++
-        console.log("Your turns: "+turns);
+        $("#turns").text(`Your Turns: ${turns}`);
         cardGuesses.length = 0;
     };
-
     if (matches == 6) {
-        console.log("You Won!")
+        $("#matches").text("Congratulations!");
+        $("#turns").text("You won, reload the page to keep playing Im lazy as fuck.");
     };
 };
 
