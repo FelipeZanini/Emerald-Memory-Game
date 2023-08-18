@@ -1,9 +1,9 @@
 let cardSelector = $(".card");
 let cardBackSelector = $(".card-back");
 let IndexSelecteds = [];
-let matches = 6;
-let turns = 0;
 let cardGuesses = [];
+let matches = 0;
+let turns = 0;
 
 function randomizeBoard() {
     while (IndexSelecteds.length < 12) {
@@ -34,11 +34,13 @@ function randomizeBoard() {
 
 function pickBoard() {
     // there is a bug if you double click too fast this if is just ignored
-    if (!cardGuesses.includes(this)) {
+    console.log(this);
+    if (!cardGuesses.includes($(this).siblings(".card-back").get()[0])) {
         cardGuesses.push(($(this).siblings(".card-back").get()[0]));
     }
-    console.log(cardGuesses);
+
     $(cardGuesses).parent().removeAttr("style");
+    // $(this).off("click");
 
     if ($(cardGuesses[0]).attr("class") == $(cardGuesses[1]).attr("class")) {
 
@@ -51,6 +53,7 @@ function pickBoard() {
 
     else if (cardGuesses.length == 2) {
 
+        // $('div').on("click", pickBoard);
         setTimeout(() => {
             $(cardGuesses).parent().css("transform", "rotateY(0deg)");
             cardGuesses.length = 0;
@@ -71,8 +74,9 @@ function pickBoard() {
     };
 };
 
-$("#restart-button").on("click", function(){
+$("#restart-button").on("click", function () {
     matches = 0;
+    turns = 0;
     IndexSelecteds.length = 0;
     cardGuesses.length = 0;
     $("#turns").text(`Your Turns: ${turns}`);
