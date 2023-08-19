@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@800&display=swap');</style>
     <link href="assets/style/stylesheet.css" rel="stylesheet">
     <title>Document</title>
 </head>
@@ -13,11 +14,11 @@
 <body>
     <main>
         <div class="container">
-            <h5 id="matches">Matches:</h5>
-            <h5 id="turns">Turns:</h5>
+            <h5 id="matches" class="text-center">Matches:</h5>
+            <h5 id="turns"  class="text-center">Turns:</h5>
         </div>
 
-        <div class="conteiner">
+        <div id="board" class="conteiner">
             <div class="row">
 
                 <div class="card col-xs-3">
@@ -65,62 +66,59 @@
                     </div>
                 </div>
             </div>
-        
 
-        <div class="row">
 
-            <div class="card col-xs-3">
-                <div class="card-container">
-                    <div class="card-front"></div>
-                    <div class="card-back"></div>
+            <div class="row">
+
+                <div class="card col-xs-3">
+                    <div class="card-container">
+                        <div class="card-front"></div>
+                        <div class="card-back"></div>
+                    </div>
+                </div>
+
+                <div class="card col-xs-3">
+                    <div class="card-container">
+                        <div class="card-front"></div>
+                        <div class="card-back"></div>
+                    </div>
+                </div>
+
+                <div class="card col-xs-3">
+                    <div class="card-container">
+                        <div class="card-front"></div>
+                        <div class="card-back"></div>
+                    </div>
                 </div>
             </div>
 
-            <div class="card col-xs-3">
-                <div class="card-container">
-                    <div class="card-front"></div>
-                    <div class="card-back"></div>
+            <div class="row">
+
+                <div class="card col-xs-3">
+                    <div class="card-container">
+                        <div class="card-front"></div>
+                        <div class="card-back"></div>
+                    </div>
+                </div>
+
+                <div class="card col-xs-3">
+                    <div class="card-container">
+                        <div class="card-front"></div>
+                        <div class="card-back"></div>
+                    </div>
+                </div>
+
+                <div class="card col-xs-3">
+                    <div class="card-container">
+                        <div class="card-front"></div>
+                        <div class="card-back"></div>
+                    </div>
                 </div>
             </div>
 
-            <div class="card col-xs-3">
-                <div class="card-container">
-                    <div class="card-front"></div>
-                    <div class="card-back"></div>
-                </div>
-            </div>
+            <button class="hide" id="restart-button">Restart</button>
+
         </div>
-
-        <div class="row">
-
-            <div class="card col-xs-3">
-                <div class="card-container">
-                    <div class="card-front"></div>
-                    <div class="card-back"></div>
-                </div>
-            </div>
-
-            <div class="card col-xs-3">
-                <div class="card-container">
-                    <div class="card-front"></div>
-                    <div class="card-back"></div>
-                </div>
-            </div>
-
-            <div class="card col-xs-3">
-                <div class="card-container">
-                    <div class="card-front"></div>
-                    <div class="card-back"></div>
-                </div>
-            </div>
-        </div>
-
-        <button class="hide" id="restart-button">Restart</button>
-
-        </div>
-
-
-
 
 
     </main>

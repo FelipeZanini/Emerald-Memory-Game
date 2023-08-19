@@ -1,9 +1,25 @@
-/* .card {
-    background-color: blue;
-    height: 70px;
-    width: 70px;
-    margin: 5px;
-} */
+body {
+  font-family: 'Handjet', cursive;
+}
+
+#board{
+  width: 285px;
+  margin: 50px auto;
+}
+.row {
+  margin: 0;
+}
+
+#matches, #turns {
+  font-size: 25px;
+  width: 105px;
+  margin: 0 auto;
+  background-color: rgba(85, 110, 137, 0.238);
+}
+
+#matches {
+  margin-top: 50px;
+}
 
 .greenCard {
     background-color: green;
@@ -35,8 +51,8 @@
 /* 3d effects  */
 .card {
     background-color: transparent;
-    width: 70px;
-    height: 70px;
+    width: 95px;
+    height: 95px;
     padding: 0;
     border: 1px solid #f1f1f1;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
