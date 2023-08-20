@@ -2,7 +2,7 @@ let cardSelector = $(".card");
 let cardBackSelector = $(".card-back");
 let IndexSelecteds = [];
 let cardGuesses = [];
-let matches = 6;
+let matches = 0;
 let turns = 0;
 
 function randomizeBoard() {
