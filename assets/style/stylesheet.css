@@ -38,21 +38,21 @@ body {
 
 .greenCard {
     background-color: green;
-    background-image: url(/assets/images/haunter.png);
+    background-image: url(assets/images/haunter.png);
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .redCard {
     background-color: red;
-    background-image: url(/assets/images/char.png);
+    background-image: url(assets/images/char.png);
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .yellowCard {
     background-color: yellow;
-    background-image: url(/assets/images/pika.png);
+    background-image: url(assets/images/pika.png);
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -60,21 +60,21 @@ body {
 .purpleCard {
     background-color: purple;
     background-color: black;
-    background-image: url(/assets/images/snor.png);
+    background-image: url(assets/images/snor.png);
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .pinkCard {
     background-color: rgb(200, 24, 86);
-    background-image: url(/assets/images/psy.png);
+    background-image: url(assets/images/psy.png);
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .blueCard {
     background-color: rgb(17, 0, 103);
-    background-image: url(/assets/images/sq.png);
+    background-image: url(assets/images/sq.png);
     background-position: center;
     background-repeat: no-repeat;
 }
