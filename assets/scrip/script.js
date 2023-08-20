@@ -2,7 +2,7 @@ let cardSelector = $(".card");
 let cardBackSelector = $(".card-back");
 let IndexSelecteds = [];
 let cardGuesses = [];
-let matches = 0;
+let matches = 6;
 let turns = 0;
 
 function randomizeBoard() {
@@ -19,17 +19,17 @@ function randomizeBoard() {
     $(cardBackSelector[IndexSelecteds[4]]).addClass("greenCard");
     $(cardBackSelector[IndexSelecteds[5]]).addClass("yellowCard");
     $(cardBackSelector[IndexSelecteds[6]]).addClass("purpleCard");
-    $(cardBackSelector[IndexSelecteds[7]]).addClass("whiteCard");
+    $(cardBackSelector[IndexSelecteds[7]]).addClass("pinkCard");
     $(cardBackSelector[IndexSelecteds[8]]).addClass("yellowCard");
-    $(cardBackSelector[IndexSelecteds[9]]).addClass("blackCard");
-    $(cardBackSelector[IndexSelecteds[10]]).addClass("whiteCard");
-    $(cardBackSelector[IndexSelecteds[11]]).addClass("blackCard");
+    $(cardBackSelector[IndexSelecteds[9]]).addClass("blueCard");
+    $(cardBackSelector[IndexSelecteds[10]]).addClass("pinkCard");
+    $(cardBackSelector[IndexSelecteds[11]]).addClass("blueCard");
 
     setTimeout(() => {
         $(".card-front").on("click", pickBoard);
         $(".card-container").css("transform", "rotateY(0deg)");
     },
-        3500);
+        2000);
 };
 
 function pickBoard() {
@@ -56,7 +56,7 @@ function pickBoard() {
             $(cardGuesses).parent().css("transform", "rotateY(0deg)");
             cardGuesses.length = 0;
         },
-            700);
+            800);
 
         var failAudio = new Audio("assets/songs/failAudio.wav");
         failAudio.play();

@@ -1,13 +1,26 @@
 body {
   font-family: 'Handjet', cursive;
+  color: white;
+  background-color: rgb(9, 8, 8);
 }
 
 #board{
   width: 285px;
   margin: 50px auto;
+  position: relative;
 }
 .row {
   margin: 0;
+
+}
+
+#restart-button{
+  font-size: 29px;
+  position: absolute;
+  background-color: rgba(24, 19, 19, 0.803);
+  border-radius: 15px;
+  top: 165.5px;
+  left: 99px;
 }
 
 #matches, #turns {
@@ -15,34 +28,55 @@ body {
   width: 105px;
   margin: 0 auto;
   background-color: rgba(85, 110, 137, 0.238);
+  border-radius: 15px;
 }
 
 #matches {
   margin-top: 50px;
+  margin-bottom: 7px;
 }
 
 .greenCard {
     background-color: green;
+    background-image: url(/assets/images/haunter.png);
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .redCard {
     background-color: red;
+    background-image: url(/assets/images/char.png);
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .yellowCard {
     background-color: yellow;
+    background-image: url(/assets/images/pika.png);
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .purpleCard {
     background-color: purple;
-}
-
-.blackCard {
     background-color: black;
+    background-image: url(/assets/images/snor.png);
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.whiteCard {
-    background-color: rgb(156, 144, 144);
+.pinkCard {
+    background-color: rgb(200, 24, 86);
+    background-image: url(/assets/images/psy.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.blueCard {
+    background-color: rgb(17, 0, 103);
+    background-image: url(/assets/images/sq.png);
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 
