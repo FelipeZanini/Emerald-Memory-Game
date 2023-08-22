@@ -29,7 +29,7 @@ body {
   margin-bottom: 7px;
 }
 
-#restart-button {
+#restart-button, #start-button {
   font-size: 29px;
   position: absolute;
   background-color: rgba(24, 19, 19, 0.803);
@@ -112,7 +112,7 @@ body {
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-  transform: rotateY(180deg);
+  transform: rotateY(0deg);
 }
 
 .card-front,

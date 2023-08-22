@@ -1,15 +1,24 @@
-$(document).ready(function() {
-    function main() {
-        let cardSelector = $(".card");
-        let cardBackSelector = $(".card-back");
-        let IndexSelecteds = [];
-        let cardGuesses = [];
-        let matches = 0;
-        let turns = 0;
+$(document).ready(function () {
+    // function main() {
+    let cardSelector = $(".card");
+    let cardBackSelector = $(".card-back");
+    let IndexSelecteds = [];
+    let cardGuesses = [];
+    let matches = 6;
+    let turns = 0;
+    
+    randomizeBoard();
 
-        randomizeBoard();
-    }
-    main()
+    
+    $("#start-button").on("click", function () {
+        setTimeout(() => {
+            $(".card-front").on("click", pickBoard);
+            $("#start-button").addClass("hide");
+            $(".card-container").css("transform", "rotateY(180deg)");
+            setTimeout(() => $(".card-container").css("transform", "rotateY(0deg)"), 1000);
+        },
+            200);
+    });
 
     function randomizeBoard() {
 
@@ -33,12 +42,8 @@ $(document).ready(function() {
         $(cardBackSelector[IndexSelecteds[10]]).addClass("pinkCard");
         $(cardBackSelector[IndexSelecteds[11]]).addClass("blueCard");
 
-        setTimeout(() => {
-            $(".card-front").on("click", pickBoard);
-            $(".card-container").css("transform", "rotateY(0deg)");
-        },
-            2000);
     };
+
 
     function pickBoard() {
         // there is a bug if you double click too fast this if is just ignored
@@ -47,7 +52,7 @@ $(document).ready(function() {
             cardGuesses.push(($(this).siblings(".card-back").get()[0]));
         }
 
-        $(cardGuesses).parent().removeAttr("style");
+        $(cardGuesses).parent().css("transform", "rotateY(180deg)");
 
         if ($(cardGuesses[0]).attr("class") == $(cardGuesses[1]).attr("class")) {
 
@@ -81,6 +86,7 @@ $(document).ready(function() {
     };
 
     $("#restart-button").on("click", function () {
+        $(".card-front").off();
         matches = 0;
         turns = 0;
         IndexSelecteds.length = 0;
@@ -91,6 +97,15 @@ $(document).ready(function() {
         $(cardBackSelector).removeClass();
         $(cardBackSelector).addClass("card-back");
         randomizeBoard();
+
+        setTimeout(() => {
+            $(".card-front").on("click", pickBoard);
+            $("#restart-button").addClass("hide");
+            $(".card-container").css("transform", "rotateY(180deg)");
+            setTimeout(() => $(".card-container").css("transform", "rotateY(0deg)"), 1000);
+        },
+            200);
+    });
     });
 
-});
+
