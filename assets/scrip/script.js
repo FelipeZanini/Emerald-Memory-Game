@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).ready(function() {
     function main() {
         let cardSelector = $(".card");
         let cardBackSelector = $(".card-back");
