@@ -1,89 +1,96 @@
-let cardSelector = $(".card");
-let cardBackSelector = $(".card-back");
-let IndexSelecteds = [];
-let cardGuesses = [];
-let matches = 0;
-let turns = 0;
+$( document ).ready(function() {
+    function main() {
+        let cardSelector = $(".card");
+        let cardBackSelector = $(".card-back");
+        let IndexSelecteds = [];
+        let cardGuesses = [];
+        let matches = 0;
+        let turns = 0;
 
-function randomizeBoard() {
-    while (IndexSelecteds.length < 12) {
-        let randomNumber = Math.floor(Math.random() * 12);
-        if (!IndexSelecteds.includes(randomNumber)) {
-            IndexSelecteds.push(randomNumber);
+        randomizeBoard();
+    }
+    main()
+
+    function randomizeBoard() {
+
+        while (IndexSelecteds.length < 12) {
+            let randomNumber = Math.floor(Math.random() * 12);
+            if (!IndexSelecteds.includes(randomNumber)) {
+                IndexSelecteds.push(randomNumber);
+            };
         };
-    };
-    $(cardBackSelector[IndexSelecteds[0]]).addClass("redCard");
-    $(cardBackSelector[IndexSelecteds[1]]).addClass("greenCard");
-    $(cardBackSelector[IndexSelecteds[2]]).addClass("redCard");
-    $(cardBackSelector[IndexSelecteds[3]]).addClass("purpleCard");
-    $(cardBackSelector[IndexSelecteds[4]]).addClass("greenCard");
-    $(cardBackSelector[IndexSelecteds[5]]).addClass("yellowCard");
-    $(cardBackSelector[IndexSelecteds[6]]).addClass("purpleCard");
-    $(cardBackSelector[IndexSelecteds[7]]).addClass("pinkCard");
-    $(cardBackSelector[IndexSelecteds[8]]).addClass("yellowCard");
-    $(cardBackSelector[IndexSelecteds[9]]).addClass("blueCard");
-    $(cardBackSelector[IndexSelecteds[10]]).addClass("pinkCard");
-    $(cardBackSelector[IndexSelecteds[11]]).addClass("blueCard");
 
-    setTimeout(() => {
-        $(".card-front").on("click", pickBoard);
-        $(".card-container").css("transform", "rotateY(0deg)");
-    },
-        2000);
-};
-
-function pickBoard() {
-    // there is a bug if you double click too fast this if is just ignored
-    console.log(this);
-    if (!cardGuesses.includes($(this).siblings(".card-back").get()[0])) {
-        cardGuesses.push(($(this).siblings(".card-back").get()[0]));
-    }
-
-    $(cardGuesses).parent().removeAttr("style");
-
-    if ($(cardGuesses[0]).attr("class") == $(cardGuesses[1]).attr("class")) {
-
-        var sucessAudio = new Audio("assets/songs/sucessAudio.wav");
-        sucessAudio.play();
-        matches++;
-        $("#matches").text(`Matches: ${matches}`);
-        cardGuesses.length = 0;
-    }
-
-    else if (cardGuesses.length == 2) {
+        $(cardBackSelector[IndexSelecteds[0]]).addClass("redCard");
+        $(cardBackSelector[IndexSelecteds[1]]).addClass("greenCard");
+        $(cardBackSelector[IndexSelecteds[2]]).addClass("redCard");
+        $(cardBackSelector[IndexSelecteds[3]]).addClass("purpleCard");
+        $(cardBackSelector[IndexSelecteds[4]]).addClass("greenCard");
+        $(cardBackSelector[IndexSelecteds[5]]).addClass("yellowCard");
+        $(cardBackSelector[IndexSelecteds[6]]).addClass("purpleCard");
+        $(cardBackSelector[IndexSelecteds[7]]).addClass("pinkCard");
+        $(cardBackSelector[IndexSelecteds[8]]).addClass("yellowCard");
+        $(cardBackSelector[IndexSelecteds[9]]).addClass("blueCard");
+        $(cardBackSelector[IndexSelecteds[10]]).addClass("pinkCard");
+        $(cardBackSelector[IndexSelecteds[11]]).addClass("blueCard");
 
         setTimeout(() => {
-            $(cardGuesses).parent().css("transform", "rotateY(0deg)");
-            cardGuesses.length = 0;
+            $(".card-front").on("click", pickBoard);
+            $(".card-container").css("transform", "rotateY(0deg)");
         },
-            800);
-
-        var failAudio = new Audio("assets/songs/failAudio.wav");
-        failAudio.play();
-        turns++
-        $("#turns").text(`Turns: ${turns}`);
-
+            2000);
     };
 
-    if (matches == 6) {
-        $("#matches").text("Congrats!");
-        $("#turns").text("You win");
-        $("#restart-button").removeClass("hide");
-    };
-};
+    function pickBoard() {
+        // there is a bug if you double click too fast this if is just ignored
+        console.log(this);
+        if (!cardGuesses.includes($(this).siblings(".card-back").get()[0])) {
+            cardGuesses.push(($(this).siblings(".card-back").get()[0]));
+        }
 
-$("#restart-button").on("click", function () {
-    matches = 0;
-    turns = 0;
-    IndexSelecteds.length = 0;
-    cardGuesses.length = 0;
-    $("#turns").text(`Turns:`);
-    $("#matches").text(`Matches:`);
-    $("#restart-button").addClass("hide");
-    $(cardBackSelector).removeClass();
-    $(cardBackSelector).addClass("card-back");
-    randomizeBoard();
+        $(cardGuesses).parent().removeAttr("style");
+
+        if ($(cardGuesses[0]).attr("class") == $(cardGuesses[1]).attr("class")) {
+
+            var sucessAudio = new Audio("assets/songs/sucessAudio.wav");
+            sucessAudio.play();
+            matches++;
+            $("#matches").text(`Matches: ${matches}`);
+            cardGuesses.length = 0;
+        }
+
+        else if (cardGuesses.length == 2) {
+
+            setTimeout(() => {
+                $(cardGuesses).parent().css("transform", "rotateY(0deg)");
+                cardGuesses.length = 0;
+            },
+                800);
+
+            var failAudio = new Audio("assets/songs/failAudio.wav");
+            failAudio.play();
+            turns++
+            $("#turns").text(`Turns: ${turns}`);
+
+        };
+
+        if (matches == 6) {
+            $("#matches").text("Congrats!");
+            $("#turns").text("You win");
+            $("#restart-button").removeClass("hide");
+        };
+    };
+
+    $("#restart-button").on("click", function () {
+        matches = 0;
+        turns = 0;
+        IndexSelecteds.length = 0;
+        cardGuesses.length = 0;
+        $("#turns").text(`Turns:`);
+        $("#matches").text(`Matches:`);
+        $("#restart-button").addClass("hide");
+        $(cardBackSelector).removeClass();
+        $(cardBackSelector).addClass("card-back");
+        randomizeBoard();
+    });
+
 });
-
-
-randomizeBoard();

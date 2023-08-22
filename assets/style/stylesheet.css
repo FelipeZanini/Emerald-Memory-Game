@@ -9,13 +9,14 @@ body {
 
 }
 
-#board{
+#board {
   width: 285px;
   margin: 50px auto;
   position: relative;
 }
 
-#matches, #turns {
+#matches,
+#turns {
   font-size: 25px;
   width: 105px;
   margin: 0 auto;
@@ -28,7 +29,7 @@ body {
   margin-bottom: 7px;
 }
 
-#restart-button{
+#restart-button {
   font-size: 29px;
   position: absolute;
   background-color: rgba(24, 19, 19, 0.803);
@@ -42,82 +43,88 @@ body {
   display: none;
 }
 
+/* Card fron Style */
+.card-front {
+  background-color: rgb(17 17 20);
+  background-image: url(/assets/images/logo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* Game card style */
 .greenCard {
-    background-color: green;
-    background-image: url(/assets/images/haunter.png);
-    background-position: center;
-    background-repeat: no-repeat;
+  background-color: green;
+  background-image: url(/assets/images/haunter.png);
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .redCard {
-    background-color: red;
-    background-image: url(/assets/images/char.png);
-    background-position: center;
-    background-repeat: no-repeat;
+  background-color: red;
+  background-image: url(/assets/images/char.png);
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .yellowCard {
-    background-color: yellow;
-    background-image: url(/assets/images/pika.png);
-    background-position: center;
-    background-repeat: no-repeat;
+  background-color: yellow;
+  background-image: url(/assets/images/pika.png);
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .purpleCard {
-    background-color: purple;
-    background-color: black;
-    background-image: url(/assets/images/snor.png);
-    background-position: center;
-    background-repeat: no-repeat;
+  background-color: purple;
+  background-color: black;
+  background-image: url(/assets/images/snor.png);
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .pinkCard {
-    background-color: rgb(200, 24, 86);
-    background-image: url(/assets/images/psy.png);
-    background-position: center;
-    background-repeat: no-repeat;
+  background-color: rgb(200, 24, 86);
+  background-image: url(/assets/images/psy.png);
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .blueCard {
-    background-color: rgb(17, 0, 103);
-    background-image: url(/assets/images/sq.png);
-    background-position: center;
-    background-repeat: no-repeat;
+  background-color: rgb(17, 0, 103);
+  background-image: url(/assets/images/sq.png);
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Card flip effect and style */
 .card {
-    background-color: transparent;
-    width: 95px;
-    height: 95px;
-    padding: 0;
-    border: 1px solid #f1f1f1;
-    perspective: 1000px;
-  }
-  
-  .card-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-    transform: rotateY(180deg);
-  }
+  background-color: transparent;
+  width: 95px;
+  height: 95px;
+  padding: 0;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+}
 
-  .card-front, .card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
-    backface-visibility: hidden;
-  }
+.card-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+}
 
-  .card-front {
-    background-color: rgb(70, 70, 78);
-  }
-  
-  .card-back {
-    transform: rotateY(180deg);
-  }
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
