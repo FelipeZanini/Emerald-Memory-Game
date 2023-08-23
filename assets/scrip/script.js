@@ -36,7 +36,7 @@ $(document).ready(function () {
 
     // Function called when a click event is fired on a card
     function pickBoard() {
-
+        
         // Block of code to assure the user is guessing a new card
         if (!cardGuesses.includes($(this).siblings(".card-back").get()[0])) {
             cardGuesses.push(($(this).siblings(".card-back").get()[0]));
