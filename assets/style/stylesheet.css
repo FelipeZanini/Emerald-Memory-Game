@@ -30,12 +30,14 @@ body {
 }
 
 #restart-button, #start-button {
+  width: 86px;
+  height: 50px;
   font-size: 29px;
   position: absolute;
   background-color: rgba(24, 19, 19, 0.803);
   border-radius: 15px;
-  top: 165.5px;
-  left: 79px;
+  top: 165px;
+  left: 99.5px;
 }
 
 /* Class to hide the element from the DOM */
@@ -93,6 +95,11 @@ body {
   background-image: url(../images/sq.png);
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* Blur effect */
+.blur {
+  filter: blur(6px);
 }
 
 /* Card flip effect and style */
