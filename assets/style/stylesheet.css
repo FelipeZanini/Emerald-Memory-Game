@@ -41,6 +41,11 @@ body {
   left: 99.5px;
 }
 
+.button-text {
+  display: flex;
+  justify-content: center;
+}
+
 /* Class to hide the element from the DOM */
 .hide {
   display: none;
