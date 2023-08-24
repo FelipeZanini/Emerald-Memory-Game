@@ -29,7 +29,8 @@ body {
   margin-bottom: 7px;
 }
 
-#restart-button, #start-button {
+#restart-button,
+#start-button {
   width: 86px;
   height: 50px;
   font-size: 29px;
